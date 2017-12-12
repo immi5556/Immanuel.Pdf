@@ -1,0 +1,70 @@
+﻿
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="Free HTML to PDF Converter, Free PDF to HTML Converter, free PDF to IMAGE Converter">
+    <meta name="keywords" content="free html to pdf converter, free pdf to html converter">
+    <meta property="og:url" content="http://pdf.immanuel.co/" />
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content="HTML to PDF converter | Immanuel Raj" />
+    <meta property="og:description" content="HTML to PDF converter | Immanuel Raj" />
+    <meta property="og:image" content="http://pdf.immanuel.co/favico.ico" />
+    <script src="~/Scripts/jquery-1.10.2.js"></script>
+    <link rel="shortcut icon" type="image/png" href="/favicon.ico" />
+    <title>PDF HTML Converter free| Immanuel Raj</title>
+    <meta name="robots" content="index, follow">
+    <meta name="distribution" content="Global" />
+    <meta name="rating" content="General" />
+    <meta name="identifier-url" content="http://pdf.immanuel.co/">
+    <meta name="Language" content="en, en-us, en-gb, en-bz, en-za">
+    <meta name="viewport" content="initial-scale = 1.0,maximum-scale = 1.0">
+    <link href="~/Content/bootstrap.min.css" rel="stylesheet" />
+    <script src="~/Scripts/jquery-1.10.2.min.js"></script>
+    <script src="~/Scripts/bootstrap.min.js"></script>
+</head>
+<body style="background-color:darkgrey;">
+    <div>
+        <div style="font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;text-align:center;margin:20px;">
+            <h3>HTML to PDF Convert</h3>
+        </div>
+        <div>
+            <div class="form-group">
+                <input type="file" name="files" class="files" id="uplFile" style="display:none;">
+                <div class="input-group col-xs-12">
+                    <span class="input-group-addon"><i class="glyphicon glyphicon-picture"></i></span>
+                    <input type="text" class="form-control input-lg" disabled placeholder="Upload Html">
+                    <span class="input-group-btn">
+                        <button class="browse btn btn-primary input-lg" type="button" id="btnUpl"><i class="glyphicon glyphicon-search"></i> Browse</button>
+                    </span>
+                </div>
+            </div>
+        </div>
+        <div style="text-align:center;">
+            <h3>(Or)</h3>
+        </div>
+        <div>
+            <div class="input-group" style="margin:15px;">
+                <span class="input-group-addon">URL</span>
+                <input type="text" class="form-control" placeholder="http://...." name="txturl" id="txturl" style="height:40px;">
+            </div>
+        </div>
+        <div>
+            <button type="button" class="btn btn-success" name="btnConvert" id="btnConvert" style="width:93%;margin:10px;">Convert</button>
+        </div>
+    </div>
+
+    <script>
+        $("#btnUpl").on("click", function () {
+            $("#uplFile").trigger("click");
+        });
+    </script>
+</body>
+</html>

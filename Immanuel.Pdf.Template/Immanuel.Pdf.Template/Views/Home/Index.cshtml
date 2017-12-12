@@ -1,0 +1,133 @@
+﻿@{
+    Layout = null;
+}
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="HTML to PDF Converter">
+    <meta name="keywords" content="d3 js, games, basics, learning, teaching">
+    <meta property="og:url" content="http://pdf.immanuel.co/" />
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content="d3 js - Games | Immanuel Raj" />
+    <meta property="og:description" content="d3 js games, basics redefined | Immanuel Raj" />
+    <meta property="og:image" content="http://www.immanuel.co/" />
+    <script src="~/Scripts/jquery-1.10.2.js"></script>
+    <link rel="shortcut icon" type="image/png" href="/favicon.ico" />
+    <title>PDF free| Immanuel Raj</title>
+    <meta name="robots" content="index, follow">
+    <meta name="distribution" content="Global" />
+    <meta name="rating" content="General" />
+    <meta name="identifier-url" content="http://www.immanuel.co">
+    <meta name="Language" content="en, en-us, en-gb, en-bz, en-za">
+    <meta name="viewport" content="initial-scale = 1.0,maximum-scale = 1.0">
+    <script src="~/Content/d3.v4.min.js"></script>
+    <style>
+        body {
+            background: rgb(204,204,204);
+            font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+        }
+
+        page {
+            background: white;
+            display: block;
+            margin: 0 auto;
+            margin-bottom: 0.5cm;
+            box-shadow: 0 0 0.5cm rgba(0,0,0,0.5);
+        }
+
+        page[size="A4"] {
+            width: 21cm;
+            height: 29.7cm;
+        }
+
+        page[size="A4"][layout="portrait"] {
+            width: 29.7cm;
+            height: 21cm;
+        }
+    </style>
+</head>
+<body>
+    <div style="background-color: aqua;border-radius: 10px;text-align: center;">
+        <h3 style="padding: 10px;">Header</h3>
+    </div>
+    <div style="position:fixed;left: 20px; top: 60px;">
+        <img src="~/Content/img/rotate.png" class="rotate-portrait" title="Rotate Portrait" width="50" height="50" /> <br />
+        <img src="~/Content/img/rotate.png" class="imgg" width="50" height="50" /><br />
+        <img src="~/Content/img/rotate.png" width="50" height="50" /><br />
+    </div>
+    <page id="a4-doc"  size="A4">A4</page>
+    @*<page size="A4" layout="portrait">A4 portrait</page>*@
+    <script>
+        var ctlronmove = undefined;
+        var a4doc = document.getElementById("a4-doc");
+        var a4offset = {
+            oleft: a4doc.offsetLeft,
+            otop: a4doc.offsetTop,
+            oheight: a4doc.offsetHeight,
+            owidth: a4doc.offsetWidth
+        };
+        a4doc.addEventListener("mousemove", function () {
+            ctlronmove = this;
+            //console.log("mousein");
+        });
+        a4doc.addEventListener("mouseout", function () {
+            ctlronmove = undefined;
+            //console.log("mouseout");
+        });
+        d3.select(".imgg").on("mousedown", function () {
+                d3.select("body").append("div")
+                    .style("width", "100px")
+                    .style("height", "100px")
+                    .style("border", "1px solid red")
+                    .style("position", "absolute")
+                    .style("left", d3.event.x + "px")
+                    .style("top", d3.event.y + "px")
+                    .call(d3.drag()
+                        .on("start", dragstarted)
+                        .on("drag", dragged)
+                        .on("end", dragended));
+            });
+        //d3.select(".imgg").call(d3.drag()
+        //    .on("start", function () {
+        //        d3.select("body").append("div")
+        //            .style("width", "100px")
+        //            .style("height", "100px")
+        //            .style("border", "1px solid red")
+        //            .style("position", "absolute")
+        //            .style("left", d3.event.x + "px")
+        //            .style("top", d3.event.y + "px")
+        //            .call(d3.drag()
+        //                .on("start", dragstarted)
+        //                .on("drag", dragged)
+        //                .on("end", dragended));
+        //    }));
+
+        var starttime, endtime;
+        function dragstarted(d) {
+            starttime = new Date();
+        }
+
+        function dragended(d) {
+            console.log(ctlronmove);
+            d3.select(this).classed("ina4", true);
+            d3.select("#a4-doc").node().appendChild(this);
+        }
+
+        function dragged(d) {
+            //console.log("x" + d3.event.x);
+            if (d3.select(this).classed("ina4")) {
+                d3.select(this)
+                    .style("left", (d3.event.x + a4offset.oleft) + "px")
+                    .style("top", (d3.event.y + a4offset.otop) + "px");
+            } else {
+                d3.select(this)
+                    .style("left", d3.event.x + "px")
+                    .style("top", d3.event.y + "px");
+            }
+        }
+    </script>
+</body>
+</html>
