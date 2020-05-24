@@ -1,9 +1,27 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio 15
-VisualStudioVersion = 15.0.26430.6
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.29411.108
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Immanuel.Pdf.Template", "Immanuel.Pdf.Template\Immanuel.Pdf.Template.csproj", "{95943606-17C9-4E60-B4AD-F5814D54141C}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "wkhtml", "wkhtml", "{7A778E7F-A6D5-4115-A278-4DAB9F714D62}"
+	ProjectSection(SolutionItems) = preProject
+		wkhtml\footer.html = wkhtml\footer.html
+		wkhtml\help-wkhtmltoimage.txt = wkhtml\help-wkhtmltoimage.txt
+		wkhtml\help-wkhtmltopdf.txt = wkhtml\help-wkhtmltopdf.txt
+		wkhtml\key_points.txt = wkhtml\key_points.txt
+		wkhtml\lordjesus.pdf = wkhtml\lordjesus.pdf
+		wkhtml\wkhtmltoimage.exe = wkhtml\wkhtmltoimage.exe
+		wkhtml\wkhtmltopdf.exe = wkhtml\wkhtmltopdf.exe
+	EndProjectSection
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{94ECB150-4867-4A61-A791-12F4600D9E97}"
+	ProjectSection(SolutionItems) = preProject
+		..\.gitignore = ..\.gitignore
+	EndProjectSection
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "NetCore.Test", "NetCore.Test\NetCore.Test.csproj", "{092E94E1-F1B7-4A53-B71B-6BE13437AE4A}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -15,8 +33,15 @@ Global
 		{95943606-17C9-4E60-B4AD-F5814D54141C}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{95943606-17C9-4E60-B4AD-F5814D54141C}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{95943606-17C9-4E60-B4AD-F5814D54141C}.Release|Any CPU.Build.0 = Release|Any CPU
+		{092E94E1-F1B7-4A53-B71B-6BE13437AE4A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{092E94E1-F1B7-4A53-B71B-6BE13437AE4A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{092E94E1-F1B7-4A53-B71B-6BE13437AE4A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{092E94E1-F1B7-4A53-B71B-6BE13437AE4A}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {47484B7D-7C94-4F4C-B6ED-230786EEFACF}
 	EndGlobalSection
 EndGlobal

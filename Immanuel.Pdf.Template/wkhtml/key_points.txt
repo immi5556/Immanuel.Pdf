@@ -1,0 +1,19 @@
+
+html to pdf
+-> wkhtmltopdf.exe "http://www.tamil-bible.com/lookup.php?Book=Romans&Chapter=11" lordjesus.pdf
+
+
+html to pdf (--footer-html)
+-> wkhtmltopdf.exe --footer-html "http://localhost:8077/footer.html" "http://www.tamil-bible.com/lookup.php?Book=Romans&Chapter=11" lordjesus.pdf
+
+html to pdf (--footer-html, -B marinbottom, T morgin Top)
+-> wkhtmltopdf.exe -B 25mm -T 25mm --footer-html "footer.html" "http://www.tamil-bible.com/lookup.php?Book=Romans&Chapter=11" lordjesus.pdf
+
+html to pdf (--footer-html, -B marinbottom, T morgin Top, --header-spacing 5 (mm))
+-> wkhtmltopdf.exe -B 25mm -T 25mm --footer-spacing 5 --footer-html "footer.html" "http://www.tamil-bible.com/lookup.php?Book=Romans&Chapter=11" lordjesus.pdf
+
+header hrml with js
+-> wkhtmltopdf.exe --header-html "header.html" -B 25mm -T 25mm --footer-spacing 5 --footer-html "footer.html" "http://www.tamil-bible.com/lookup.php?Book=Romans&Chapter=11" lordjesus.pdf
+
+header html with querystring
+-> wkhtmltopdf.exe --header-html "http://localhost:8077/header.html?webpage1=Lord Jesus my Master" -B 25mm -T 25mm --footer-spacing 5 --footer-html "footer.html" "http://www.tamil-bible.com" lordjesus.pdf
