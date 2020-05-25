@@ -8,6 +8,8 @@ EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "wkhtml", "wkhtml", "{7A778E7F-A6D5-4115-A278-4DAB9F714D62}"
 	ProjectSection(SolutionItems) = preProject
 		wkhtml\footer.html = wkhtml\footer.html
+		wkhtml\grid_view.html = wkhtml\grid_view.html
+		wkhtml\header.html = wkhtml\header.html
 		wkhtml\help-wkhtmltoimage.txt = wkhtml\help-wkhtmltoimage.txt
 		wkhtml\help-wkhtmltopdf.txt = wkhtml\help-wkhtmltopdf.txt
 		wkhtml\key_points.txt = wkhtml\key_points.txt
